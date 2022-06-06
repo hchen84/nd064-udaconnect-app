@@ -6,9 +6,9 @@ name: UdaconnectApp - Package with Docker
 # events but only for the master branch
 on:
   push:
-    branches: [ main ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ main ]
+    branches: [ "master" ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -68,7 +68,7 @@ jobs:
             context: ./
             file: ./Dockerfile
             push: true 
-            tags: ${{ secrets.DOCKERHUB_USERNAME }}/nd064-udaconnect-api:latest
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/nd064-udaconnect-app:latest
           
         # - name: Run the image in a container
         #   uses: addnab/docker-run-action@v3
